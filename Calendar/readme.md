@@ -1,16 +1,20 @@
 
 # Calendar
 
-To generate a Calendar in C language based upon the input date, month and year from the user.
+To generate a Calendar in C language based upon the input date, month and year from the user.  
 
 
-Sample Input :-
+**Input Format :** DD MM YY
+
+
+
+**Sample Input**:-
 
 ```bash
   3 11 2023
 ```
 
-Sample Output :-
+**Sample Output** :-
 
 ```bash
   November 3rd, 2023
