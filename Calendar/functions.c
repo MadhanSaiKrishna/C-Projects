@@ -99,7 +99,6 @@ void printCalendar(int d, int m, int y)
     printf("Sun Mon Tue Wed Thu Fri Sat\n");
     int i,j;
     int dayCounter=1;
-    int x=1;
     int numDays = getNumberOfDays(m,y);
     int startDay = dayOfWeek(1,m,y);
     for (i = 0; i < 6; i++) {
@@ -116,7 +115,7 @@ void printCalendar(int d, int m, int y)
                 }
                 dayCounter++;
             } else {
-                printf("%2d  ", x++);
+                printf("  ");
             }
         }
         printf("\n");
