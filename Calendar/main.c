@@ -7,6 +7,13 @@ int main()
 {
     int d, m, y;
     scanf("%d %d %d", &d, &m, &y);
-    printCalendar(d,m,y);
+    if ((d>0 && d<32)&&(m>0 && m<13)&&(y>0))
+    {
+        printCalendar(d,m,y);
+    }
+    else
+    {
+        printf("**Wrong Input**\n");
+    }
     return 0;
 }
