@@ -3,8 +3,8 @@
 typedef struct db
 {
     int id;
-    char name[1000];
-    char position[1000];
+    char* name;
+    char* position;
     int salary;
 }db;
 
@@ -18,3 +18,4 @@ typedef struct Node
 Node* add(Node* list);
 void display(Node* list);
 void input(Node* list);
+void freeList(Node* list);

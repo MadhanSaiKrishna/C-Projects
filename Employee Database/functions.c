@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define BUFFER_SIZE 1000
+
 typedef Node* Linkedlist;
 
 Node *add(Node *list)
@@ -41,9 +43,14 @@ void input(Linkedlist list)
     printf("Enter Employee ID : ");
     scanf("%d", &list->data.id);
     printf("Enter Name : ");
-    fgets(list->data.name,1000,stdin);
+    list->data.name= (char*)malloc(BUFFER_SIZE);
+    fgets(list->data.name,BUFFER_SIZE,stdin);
+    list->data.name[strlen(list->data.name)-1]= '\0';
+    while (getchar() != '\n');
     printf("Enter Position : ");
-    fgets(list->data.position,1000,stdin);
+    list->data.position = (char*)malloc(BUFFER_SIZE);
+    fgets(list->data.position,BUFFER_SIZE,stdin);
+    list->data.position[strlen(list->data.position)-1]= '\0';
     printf("Enter Salary : ");
     scanf("%d", &list->data.salary);
     //Issue with taking input
@@ -58,7 +65,8 @@ void display(Linkedlist list)
     Linkedlist tm = list;
     while (tm!=NULL)
     {
+        printf("%s", tm->data.name);
         printf("%3d\t%s\t\t%s\t\t%d\n", tm->data.id, tm->data.name,tm->data.position, tm->data.salary);
         tm= tm->next;
     }
-}
+}//Issue with display function
