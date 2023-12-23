@@ -2,6 +2,8 @@
 #include "functions.h"
 #include <stdlib.h>
 
+typedef Node *Linkedlist;
+
 int main()
 {
     int ch;
@@ -16,50 +18,59 @@ int main()
     list = NULL;
     while (1)
     {
-        
+
         printf("Enter your choice : ");
         scanf("%d", &ch);
         if (ch > 6 || ch < -1)
         {
             printf("**Wrong Input**\nTry Again ... \n");
-             printf("Enter your choice : ");
-        scanf("%d", &ch);
+            printf("Enter your choice : ");
+            scanf("%d", &ch);
         }
-        else if (ch==1)
+        else if (ch == 1)
         {
-           list =  add(list);
+            list = add(list);
         }
-        else if(ch==2)
+        else if (ch == 2)
         {
             printf("Employee List : \n");
             display(list);
         }
-        else if(ch==3)
+        else if (ch == 3)
         {
             int num;
             printf("Enter Employee ID to search:");
             scanf("%d", &num);
-            searchbyId(num,list);
+            searchbyId(num, list);
         }
-        else if(ch==4)
+        else if (ch == 4)
         {
             int id, newsalary;
             printf("Enter Employee ID to update salary: ");
             scanf("%d", &id);
             printf("Enter new salary: ");
             scanf("%d", &newsalary);
-            updateSalary(id,newsalary,list);
+            updateSalary(id, newsalary, list);
         }
-        else if(ch==5)
+        else if (ch == 5)
         {
             int num;
             printf("Enter Employee ID to delete: ");
             scanf("%d", &num);
-            list = delete(num,list);
+            list = delete (num, list);
         }
-        else if(ch==6)
+        else if (ch == 6)
         {
             printf("Exiting the program...\n");
+            Linkedlist tm = list;
+            while (tm != NULL)
+            {
+                free(tm->data.name);
+                free(tm->data.position);
+                tm = tm->next;
+            }
+            free(tm);
+            free(list);
             return 0;
         }
     }

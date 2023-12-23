@@ -19,6 +19,7 @@ Node *add(Node *list)
     if (list == NULL)
     {
         input(newNode);
+        printf("Employee added successfully!\n\n");
         return newNode;
     }
     
@@ -31,10 +32,11 @@ Node *add(Node *list)
         }
         tm->next= newNode;
         input(newNode);
+        printf("Employee added successfully!\n\n");
+        free(tm);
         return list;
         
     }
-    printf("Employee added successfully\n\n");
     return list;
 }
 
@@ -58,7 +60,7 @@ void input(Linkedlist list)
     list->data.position[strcspn(list->data.position, "\n")] = '\0'; 
     printf("Enter Salary : ");
     scanf("%d", &list->data.salary);
-    //Issue with taking input   
+    printf("\n");
 }
 
 void display(Linkedlist list)
@@ -68,7 +70,8 @@ void display(Linkedlist list)
         printf("Employee List: (empty)\n\n");
     }
     
-    printf("ID \tName\t\tPosition\t\tSalary\n");
+    printf("ID \tName\t\t\tPosition\t\tSalary\n");
+    printf("-----------------------------------------------------------------------------\n");
     if(list==NULL)
     printf("(empty)\n");
     Linkedlist tm = list;
@@ -97,6 +100,7 @@ void searchbyId(int num, Linkedlist list)
     {
         printf("Employee NOT found!!\n\n");
     }
+    free(tm);
 }
 
 void updateSalary(int id, int newsalary, Linkedlist list)
@@ -120,6 +124,7 @@ void updateSalary(int id, int newsalary, Linkedlist list)
     {
         printf("Employee ID NOT found!!\n\n");
     }
+    free(tm);
 }
 
 Node* delete(int num,Linkedlist list)
