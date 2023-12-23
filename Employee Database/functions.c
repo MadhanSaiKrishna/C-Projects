@@ -34,7 +34,7 @@ Node *add(Node *list)
         return list;
         
     }
-    printf("Employee added successfully\n");
+    printf("Employee added successfully\n\n");
     return list;
 }
 
@@ -63,6 +63,11 @@ void input(Linkedlist list)
 
 void display(Linkedlist list)
 {
+    if (list==NULL)
+    {
+        printf("Employee List: (empty)\n\n");
+    }
+    
     printf("ID \tName\t\tPosition\t\tSalary\n");
     if(list==NULL)
     printf("(empty)\n");
@@ -83,14 +88,14 @@ void searchbyId(int num, Linkedlist list)
         if (num==tm->data.id)
         {
             flag =1;
-            printf("Employee found!\n");
+            printf("Employee found!\n\n");
             display(tm);
         }
         tm=tm->next;
     }
     if (flag==0)
     {
-        printf("Employee NOT found!!\n");
+        printf("Employee NOT found!!\n\n");
     }
 }
 
@@ -109,11 +114,11 @@ void updateSalary(int id, int newsalary, Linkedlist list)
     }
     if(flag==1)
     {
-        printf("Salary updated successfully!\n");
+        printf("Salary updated successfully!\n\n");
     }    
     else if(flag ==0)
     {
-        printf("Employee ID NOT found!!\n");
+        printf("Employee ID NOT found!!\n\n");
     }
 }
 
@@ -149,7 +154,7 @@ Node* delete(int num,Linkedlist list)
     }
     if(flag ==1)
     {
-        printf("Employee deleted successfully!\n");
+        printf("Employee deleted successfully!\n\n");
     }
     free(tm);
     free(address);
