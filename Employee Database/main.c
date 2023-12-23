@@ -1,3 +1,4 @@
+//Issues with printf statements used for output
 #include <stdio.h>
 #include "functions.h"
 #include <stdlib.h>

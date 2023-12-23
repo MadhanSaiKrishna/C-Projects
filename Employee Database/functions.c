@@ -149,18 +149,11 @@ Node* delete(int num,Linkedlist list)
         {
             address= tm->next->next;
             freeList(tm->next);
-            if(tm->next==NULL)
-            {
-                flag=1;
-            }
             tm->next= address;
         }
         tm = tm->next;
     }
-    if(flag ==1)
-    {
-        printf("Employee deleted successfully!\n\n");
-    }
+    printf("Employee deleted successfully!\n\n");
     free(tm);
     free(address);
     return list;
