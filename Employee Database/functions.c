@@ -93,3 +93,26 @@ void searchbyId(int num, Linkedlist list)
         printf("Employee NOT found!!\n");
     }
 }
+
+void updateSalary(int id, int newsalary, Linkedlist list)
+{
+    int flag=0;
+    Linkedlist tm = list;
+    while (tm!=NULL)
+    {
+        if (tm->data.id==id)
+        {
+            flag=1;
+            tm->data.salary=newsalary;
+        }
+        tm=tm->next;
+    }
+    if(flag==1)
+    {
+        printf("Salary updated successfully!\n");
+    }    
+    else if(flag ==0)
+    {
+        printf("Employee ID NOT found!!\n");
+    }
+}

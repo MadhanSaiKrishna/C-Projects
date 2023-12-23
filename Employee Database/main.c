@@ -41,6 +41,15 @@ int main()
             scanf("%d", &num);
             searchbyId(num,list);
         }
+        else if(ch==4)
+        {
+            int id, newsalary;
+            printf("Enter Employee ID to update salary: ");
+            scanf("%d", &id);
+            printf("Enter new salary: ");
+            scanf("%d", &newsalary);
+            updateSalary(id,newsalary,list);
+        }
         else if(ch==6)
         {
             return 0;
