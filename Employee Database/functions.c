@@ -116,3 +116,51 @@ void updateSalary(int id, int newsalary, Linkedlist list)
         printf("Employee ID NOT found!!\n");
     }
 }
+
+Node* delete(int num,Linkedlist list)
+{
+    int flag=0;
+    if(list==NULL)
+    {
+        printf("(empty)\n");
+        return NULL;
+    }
+    if (list->next==NULL&& list->data.id==num)
+    {
+        freeList(list);
+        return NULL;
+    }
+    
+    Linkedlist tm = list;
+    Linkedlist address;
+    while (tm->next!=NULL)
+    {
+        if(tm->next->data.id==num)
+        {
+            address= tm->next->next;
+            freeList(tm->next);
+            if(tm->next==NULL)
+            {
+                flag=1;
+            }
+            tm->next= address;
+        }
+        tm = tm->next;
+    }
+    if(flag ==1)
+    {
+        printf("Employee deleted successfully!\n");
+    }
+    free(tm);
+    free(address);
+    return list;
+}
+
+void freeList(Linkedlist list)
+{
+    free(list->data.name);
+    free(list->data.position);
+    free(list->next);
+    free(list);
+
+}

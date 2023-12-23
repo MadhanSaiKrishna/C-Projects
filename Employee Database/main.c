@@ -55,7 +55,7 @@ int main()
             int num;
             printf("Enter Employee ID to delete: ");
             scanf("%d", &num);
-            delete(num,list);
+            list = delete(num,list);
         }
         else if(ch==6)
         {
