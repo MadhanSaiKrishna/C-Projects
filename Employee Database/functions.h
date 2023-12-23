@@ -21,3 +21,4 @@ void input(Node* list);
 void freeList(Node* list);
 void searchbyId(int num,Node* list);
 void updateSalary(int id, int salary,Node* list);
+Node* delete(int num,Node* list);

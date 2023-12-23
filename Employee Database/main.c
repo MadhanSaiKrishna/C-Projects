@@ -50,8 +50,16 @@ int main()
             scanf("%d", &newsalary);
             updateSalary(id,newsalary,list);
         }
+        else if(ch==5)
+        {
+            int num;
+            printf("Enter Employee ID to delete: ");
+            scanf("%d", &num);
+            delete(num,list);
+        }
         else if(ch==6)
         {
+            printf("Exiting the program...\n");
             return 0;
         }
     }
