@@ -63,7 +63,6 @@ void input(Linkedlist list)
 
 void display(Linkedlist list)
 {
-    printf("Employee List : \n");
     printf("ID \tName\t\tPosition\t\tSalary\n");
     if(list==NULL)
     printf("(empty)\n");
@@ -72,5 +71,25 @@ void display(Linkedlist list)
     {
         printf("%3d\t%s\t\t%s\t\t%d\n", tm->data.id, tm->data.name,tm->data.position, tm->data.salary);
         tm= tm->next;
+    }
+}
+
+void searchbyId(int num, Linkedlist list)
+{
+    int flag=0;
+    Linkedlist tm = list;
+    while (tm!=NULL)
+    {
+        if (num==tm->data.id)
+        {
+            flag =1;
+            printf("Employee found!\n");
+            display(tm);
+        }
+        tm=tm->next;
+    }
+    if (flag==0)
+    {
+        printf("Employee NOT found!!\n");
     }
 }

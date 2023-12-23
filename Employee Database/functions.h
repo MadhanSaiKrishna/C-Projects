@@ -19,3 +19,4 @@ Node* add(Node* list);
 void display(Node* list);
 void input(Node* list);
 void freeList(Node* list);
+void searchbyId(int num,Node* list);

@@ -31,9 +31,16 @@ int main()
         }
         else if(ch==2)
         {
+            printf("Employee List : \n");
             display(list);
         }
-        
+        else if(ch==3)
+        {
+            int num;
+            printf("Enter Employee ID to search:");
+            scanf("%d", &num);
+            searchbyId(num,list);
+        }
         else if(ch==6)
         {
             return 0;
