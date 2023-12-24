@@ -3,6 +3,9 @@
 #include <time.h>
 #include <string.h>
 
+#define MAX_CUST 100
+#define MAX_REC 1000
+
 typedef struct Customer {
     char name[100];
     int phone_no;
@@ -23,8 +26,8 @@ typedef struct Reciept {
 } Reciept;
 
 typedef struct Database {
-    Customer customers[100];
-    Reciept reciepts[1000];
+    Customer customers[MAX_CUST];
+    Reciept reciepts[MAX_REC];
     int customer_count;
     int reciept_count;
 } Database;

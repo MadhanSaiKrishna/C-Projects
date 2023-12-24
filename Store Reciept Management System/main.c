@@ -13,7 +13,7 @@ int main() {
         printf("-------------------------------------------------------------------\n"
                "Store Reciept Management System\n"
                "-------------------------------------------------------------------\n"
-               "\tOptions: 0 New Receipt | 1 New Customer | 2 Reciepts by Customer \n"
+               "\tOptions: 0 New Receipt | 1 New Customer | 2 Reciepts by Customer | 3 Exit \n"
                "\tStats: %d Customers | %d Reciepts\n"
                "-------------------------------------------------------------------\n"
                "Enter Option: ", db.customer_count, db.reciept_count);
@@ -70,7 +70,10 @@ int main() {
                 }
 
                     printf("----------------------\n");
-            
+            case 3:
+            printf("Exiting..\n");
+            return 0;
+
             default:
                 break;
         }
